@@ -1,0 +1,3 @@
+[submodule "Atlas/Libraries/spdlog"]
+	path = Atlas/Libraries/spdlog
+	url = https://github.com/gabime/spdlog
