@@ -1,3 +1,4 @@
+#include "atlpch.h"
 #include "Application.h"
 
 #include "Atlas/Log.h"
