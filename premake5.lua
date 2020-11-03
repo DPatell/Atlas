@@ -26,6 +26,7 @@ project "Atlas"
 
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/Libraries/spdlog/include"
 	}
 
