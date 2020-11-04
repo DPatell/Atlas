@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Atlas/Libraries/GLFW/include"
+IncludeDir["Glad"] = "Atlas/Libraries/Glad/include"
 
 include "Atlas/Libraries/GLFW"
+include "Atlas/Libraries/Glad"
 
 project "Atlas"
 	location "Atlas"
@@ -38,12 +40,14 @@ project "Atlas"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/Libraries/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "Atlas"
 		defines
 		{
 			"ATL_PLATFORM_WINDOWS",
-			"ATL_BUILD_DLL"
+			"ATL_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
