@@ -8,14 +8,14 @@ workspace "Atlas"
 		"Dist"
 	}
 
+startproject "Sandbox"
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Atlas/Libraries/GLFW/include"
 
 include "Atlas/Libraries/GLFW"
-
-startproject "Sandbox"
 
 project "Atlas"
 	location "Atlas"
@@ -69,14 +69,17 @@ project "Atlas"
 			"ATL_DEBUG",
 			"ATL_ENABLE_ASSERTS"
 		}
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "ATL_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ATL_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -116,12 +119,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "ATL_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 	
 	filter "configurations:Release"
 		defines "ATL_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ATL_DIST"
+		buildoptions "/MD"
 		optimize "On"

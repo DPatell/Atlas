@@ -7,6 +7,9 @@
     <Filter Include="Atlas\Events">
       <UniqueIdentifier>{DEF313F9-CA56-A39D-73DC-DB535F1E6F20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Atlas.h" />
@@ -31,21 +34,39 @@
     <ClInclude Include="src\Atlas\Events\MouseEvent.h">
       <Filter>Atlas\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Atlas\Layer.h">
+      <Filter>Atlas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Atlas\LayerStack.h">
+      <Filter>Atlas</Filter>
+    </ClInclude>
     <ClInclude Include="src\Atlas\Log.h">
       <Filter>Atlas</Filter>
     </ClInclude>
+    <ClInclude Include="src\Atlas\Window.h">
+      <Filter>Atlas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\MSWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
     <ClInclude Include="src\atlpch.h" />
-    <ClInclude Include="src\Atlas\Window.h" />
-    <ClInclude Include="src\Platform\MSWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Atlas\Application.cpp">
       <Filter>Atlas</Filter>
     </ClCompile>
+    <ClCompile Include="src\Atlas\Layer.cpp">
+      <Filter>Atlas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Atlas\LayerStack.cpp">
+      <Filter>Atlas</Filter>
+    </ClCompile>
     <ClCompile Include="src\Atlas\Log.cpp">
       <Filter>Atlas</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\MSWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
     <ClCompile Include="src\atlpch.cpp" />
-    <ClCompile Include="src\Platform\MSWindow.cpp" />
   </ItemGroup>
 </Project>

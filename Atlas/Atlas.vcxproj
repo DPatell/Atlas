@@ -85,6 +85,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -110,6 +111,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -136,6 +138,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -158,18 +161,22 @@
     <ClInclude Include="src\Atlas\Events\Event.h" />
     <ClInclude Include="src\Atlas\Events\KeyEvent.h" />
     <ClInclude Include="src\Atlas\Events\MouseEvent.h" />
+    <ClInclude Include="src\Atlas\Layer.h" />
+    <ClInclude Include="src\Atlas\LayerStack.h" />
     <ClInclude Include="src\Atlas\Log.h" />
     <ClInclude Include="src\Atlas\Window.h" />
-    <ClInclude Include="src\atlpch.h" />
     <ClInclude Include="src\Platform\MSWindow.h" />
+    <ClInclude Include="src\atlpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Atlas\Application.cpp" />
+    <ClCompile Include="src\Atlas\Layer.cpp" />
+    <ClCompile Include="src\Atlas\LayerStack.cpp" />
     <ClCompile Include="src\Atlas\Log.cpp" />
+    <ClCompile Include="src\Platform\MSWindow.cpp" />
     <ClCompile Include="src\atlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Platform\MSWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Libraries\GLFW\GLFW.vcxproj">
