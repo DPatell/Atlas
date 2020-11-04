@@ -10,6 +10,13 @@ workspace "Atlas"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Atlas/Libraries/GLFW/include"
+
+include "Atlas/Libraries/GLFW"
+
+startproject "Sandbox"
+
 project "Atlas"
 	location "Atlas"
 	kind "SharedLib"
@@ -30,7 +37,14 @@ project "Atlas"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/Libraries/spdlog/include"
+		"%{prj.name}/Libraries/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter	"system:windows"
@@ -50,7 +64,11 @@ project "Atlas"
 		}
 
 	filter "configurations:Debug"
-		defines "ATL_DEBUG"
+		defines 
+		{
+			"ATL_DEBUG",
+			"ATL_ENABLE_ASSERTS"
+		}
 		symbols "On"
 	
 	filter "configurations:Release"

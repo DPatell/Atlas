@@ -35,6 +35,8 @@
       <Filter>Atlas</Filter>
     </ClInclude>
     <ClInclude Include="src\atlpch.h" />
+    <ClInclude Include="src\Atlas\Window.h" />
+    <ClInclude Include="src\Platform\MSWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Atlas\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Atlas</Filter>
     </ClCompile>
     <ClCompile Include="src\atlpch.cpp" />
+    <ClCompile Include="src\Platform\MSWindow.cpp" />
   </ItemGroup>
 </Project>
