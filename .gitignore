@@ -4,3 +4,5 @@ bin-int/
 
 #Files
 *.user
+*.PVS-Studio.*
+*.PVS-Studio
