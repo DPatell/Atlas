@@ -4,3 +4,6 @@
 [submodule "Atlas/Libraries/GLFW"]
 	path = Atlas/Libraries/GLFW
 	url = https://github.com/DPatell/glfw
+[submodule "Atlas/Libraries/imgui"]
+	path = Atlas/Libraries/imgui
+	url = https://github.com/DPatell/imgui

@@ -1,0 +1,1 @@
+@call "C:\Program Files (x86)\PVS-Studio\x64\PVS-Studio.exe" --cfg "C:\Atlas\Atlas\ImGuiOpenGLRenderer.cpp.PVS-Studio.cfg"
