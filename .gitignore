@@ -6,3 +6,4 @@ bin-int/
 *.user
 *.PVS-Studio.*
 *.PVS-Studio
+*.ini
