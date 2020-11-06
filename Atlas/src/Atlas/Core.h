@@ -10,6 +10,10 @@
 	#error Atlas is Windows Exclusive.
 #endif // ATL_PLATFORM_WINDOWS
 
+#ifdef ATL_DEBUG
+	#define ATL_ENABLE_ASSERTS
+#endif
+
 #ifdef ATL_ENABLE_ASSERTS
 	#define ATL_ASSERTS(x, ...) {if(!(x)) { ATL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 	#define ATL_CORE_ASSERTS(x, ...) {if(!(x)) { ATL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}

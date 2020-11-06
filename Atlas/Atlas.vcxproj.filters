@@ -55,13 +55,15 @@
     <ClInclude Include="src\Atlas\Window.h">
       <Filter>Atlas</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\MSWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\atlpch.h" />
+    <ClInclude Include="src\Atlas\Input.h" />
+    <ClInclude Include="src\Platform\Windows\MSInput.h" />
+    <ClInclude Include="src\Platform\Windows\MSWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Atlas\Application.cpp">
@@ -79,12 +81,13 @@
     <ClCompile Include="src\Atlas\Log.cpp">
       <Filter>Atlas</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\MSWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\atlpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\MSInput.cpp" />
+    <ClCompile Include="src\Platform\Windows\MSWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

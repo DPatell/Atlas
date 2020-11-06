@@ -80,12 +80,11 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>atlpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ATL_PLATFORM_WINDOWS;ATL_BUILD_DLL;GLFW_INCLUDE_NONE;ATL_DEBUG;ATL_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ATL_PLATFORM_WINDOWS;ATL_BUILD_DLL;GLFW_INCLUDE_NONE;ATL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;Libraries\spdlog\include;Libraries\GLFW\include;Libraries\Glad\include;Libraries\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -95,7 +94,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Atlas\Atlas.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Atlas\Atlas.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Atlas\Atlas.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Atlas\Atlas.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Atlas\Atlas.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Atlas\Atlas.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Atlas\Atlas.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -110,8 +109,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -122,7 +120,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Atlas\Atlas.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Atlas\Atlas.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Atlas\Atlas.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Atlas\Atlas.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Atlas\Atlas.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Atlas\Atlas.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Atlas\Atlas.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -137,8 +135,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -149,7 +146,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Atlas\Atlas.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Atlas\Atlas.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Atlas\Atlas.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Atlas\Atlas.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Atlas\Atlas.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Atlas\Atlas.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Atlas\Atlas.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -162,11 +159,13 @@
     <ClInclude Include="src\Atlas\Events\KeyEvent.h" />
     <ClInclude Include="src\Atlas\Events\MouseEvent.h" />
     <ClInclude Include="src\Atlas\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Atlas\Input.h" />
     <ClInclude Include="src\Atlas\Layer.h" />
     <ClInclude Include="src\Atlas\LayerStack.h" />
     <ClInclude Include="src\Atlas\Log.h" />
     <ClInclude Include="src\Atlas\Window.h" />
-    <ClInclude Include="src\Platform\MSWindow.h" />
+    <ClInclude Include="src\Platform\Windows\MSInput.h" />
+    <ClInclude Include="src\Platform\Windows\MSWindow.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\atlpch.h" />
   </ItemGroup>
@@ -176,7 +175,8 @@
     <ClCompile Include="src\Atlas\Layer.cpp" />
     <ClCompile Include="src\Atlas\LayerStack.cpp" />
     <ClCompile Include="src\Atlas\Log.cpp" />
-    <ClCompile Include="src\Platform\MSWindow.cpp" />
+    <ClCompile Include="src\Platform\Windows\MSInput.cpp" />
+    <ClCompile Include="src\Platform\Windows\MSWindow.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\atlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
