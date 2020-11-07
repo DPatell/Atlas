@@ -10,12 +10,19 @@ public:
 
 	void OnUpdate() override
 	{
-		ATL_INFO("ExampleLayer::Update");
+			if (Atlas::Input::IsKeyPressed(ATL_KEY_TAB))
+				ATL_TRACE("Tab Key Is Pressed (Poll)!");
 	}
 
 	void OnEvent(Atlas::Event& event) override
 	{
-		ATL_TRACE("{0}", event);
+		if (event.GetEventType() == Atlas::EventType::KeyPressed)
+		{
+			Atlas::KeyPressedEvent& e = (Atlas::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == ATL_KEY_TAB)
+				ATL_TRACE("Tab Key Is Pressed (Event)!");
+			ATL_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 
