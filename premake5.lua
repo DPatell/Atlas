@@ -15,6 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Atlas/Libraries/GLFW/include"
 IncludeDir["Glad"] = "Atlas/Libraries/Glad/include"
 IncludeDir["ImGui"] = "Atlas/Libraries/imgui"
+IncludeDir["glm"] = "Atlas/Libraries/glm"
 
 group "Dependacies"
 	include "Atlas/Libraries/GLFW"
@@ -38,7 +39,9 @@ project "Atlas"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/Libraries/glm/glm/**.hpp",
+		"%{prj.name}/Libraries/glm/glm/**.inl",
 	}
 
 	includedirs
@@ -47,7 +50,8 @@ project "Atlas"
 		"%{prj.name}/Libraries/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}",
 	}
 
 	links
@@ -101,13 +105,16 @@ project "Sandbox"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
 
 	includedirs
 	{
 		"Atlas/Libraries/spdlog/include",
-		"Atlas/src"
+		"Atlas/src",
+		"%{IncludeDir.glm}",
 	}
 
 	links

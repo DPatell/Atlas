@@ -7,3 +7,6 @@
 [submodule "Atlas/Libraries/imgui"]
 	path = Atlas/Libraries/imgui
 	url = https://github.com/DPatell/imgui
+[submodule "Atlas\\Libraries\\glm"]
+	path = Atlas\\Libraries\\glm
+	url = https://github.com/g-truc/glm
