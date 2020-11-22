@@ -32,7 +32,7 @@ namespace Atlas
 	class ATLAS_API MouseScrolledEvent : public Event
 	{
 	public:
-		MouseScrolledEvent(int xOffset, int yOffset) : m_XOffset(xOffset), m_YOffset(yOffset)
+		MouseScrolledEvent(float xOffset, float yOffset) : m_XOffset(xOffset), m_YOffset(yOffset)
 		{
 
 		}

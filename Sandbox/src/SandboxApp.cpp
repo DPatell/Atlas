@@ -1,5 +1,7 @@
 #include <Atlas.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Atlas::Layer
 {
 public:
@@ -12,6 +14,13 @@ public:
 	{
 			if (Atlas::Input::IsKeyPressed(ATL_KEY_TAB))
 				ATL_TRACE("Tab Key Is Pressed (Poll)!");
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("HelloWorld");
+		ImGui::End();
 	}
 
 	void OnEvent(Atlas::Event& event) override
@@ -32,7 +41,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Atlas::ImGuiLayer());
 	}
 
 	~Sandbox()

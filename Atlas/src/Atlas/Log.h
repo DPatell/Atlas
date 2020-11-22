@@ -25,11 +25,11 @@ namespace Atlas
 #define ATL_CORE_INFO(...)  ::Atlas::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define ATL_CORE_WARN(...)  ::Atlas::Log::GetCoreLogger()->warn	(__VA_ARGS__)
 #define ATL_CORE_ERROR(...) ::Atlas::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define ATL_CORE_FATAL(...) ::Atlas::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define ATL_CORE_CRITICAL(...) ::Atlas::Log::GetCoreLogger()->critical(__VA_ARGS__)
 
 // Client Log Macros
 #define ATL_TRACE(...) ::Atlas::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define ATL_INFO(...)  ::Atlas::Log::GetClientLogger()->info(__VA_ARGS__)
 #define ATL_WARN(...)  ::Atlas::Log::GetClientLogger()->warn	(__VA_ARGS__)
 #define ATL_ERROR(...) ::Atlas::Log::GetClientLogger()->error(__VA_ARGS__)
-#define ATL_FATAL(...) ::Atlas::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define ATL_CRITICAL(...) ::Atlas::Log::GetClientLogger()->critical(__VA_ARGS__)
