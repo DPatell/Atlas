@@ -8,6 +8,8 @@
 
 #include "Atlas/ImGui/ImGuiLayer.h"
 
+#include "Atlas/Renderer/Shader.h"
+
 namespace Atlas
 {
 	class ATLAS_API Application
@@ -33,6 +35,12 @@ namespace Atlas
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		unsigned int m_VertexArray;
+		unsigned int m_VertexBuffer;
+		unsigned int m_IndexBuffer;
+
+		std::unique_ptr<Shader> m_Shader;
 
 	private:
 		static Application* s_Instance;

@@ -17,6 +17,11 @@ namespace Atlas
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		ATL_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		ATL_CORE_INFO("OpenGL Info: ");
+		ATL_CORE_INFO("	Vendor:   {0}", glGetString(GL_VENDOR));
+		ATL_CORE_INFO("	Renderer: {0}", glGetString(GL_RENDERER));
+		ATL_CORE_INFO("	Version:  {0}", glGetString(GL_VERSION));
 	}
 
 	void OpenGLContext::SwapBuffers()
