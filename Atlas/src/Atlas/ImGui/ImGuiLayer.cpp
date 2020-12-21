@@ -18,11 +18,6 @@ namespace Atlas
 
 	}
 
-	ImGuiLayer::~ImGuiLayer()
-	{
-
-	}
-
 	void ImGuiLayer::OnAttach()
 	{
 		// Setup ImGui context

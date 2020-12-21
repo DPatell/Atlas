@@ -7,9 +7,4 @@ namespace Atlas
 	{
 
 	}
-
-	Layer::~Layer()
-	{
-
-	}
 }
